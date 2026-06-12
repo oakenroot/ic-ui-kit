@@ -10,6 +10,7 @@
 | Property                | Attribute                 | Description                                                                                                                                  | Type                                                                                                                                                                                                  | Default     |
 | ----------------------- | ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
 | `checked`               | `checked`                 | If `true`, the menu item will be in a checked state. This is only applicable when variant is set to `toggle`.                                | `boolean \| undefined`                                                                                                                                                                                | `false`     |
+| `closeMenuOnSelect`     | `close-menu-on-select`    | If `true`, the menu will close when this menu item is clicked.                                                                               | `boolean \| undefined`                                                                                                                                                                                | `true`      |
 | `description`           | `description`             | The description displayed in the menu item, below the label.                                                                                 | `string \| undefined`                                                                                                                                                                                 | `undefined` |
 | `disabled`              | `disabled`                | If `true`, the menu item will be in disabled state.                                                                                          | `boolean \| undefined`                                                                                                                                                                                | `false`     |
 | `href`                  | `href`                    | The URL that the link points to. This will render the menu item as an "a" tag.                                                               | `string \| undefined`                                                                                                                                                                                 | `undefined` |
@@ -43,22 +44,22 @@
 
  - [ic-popover-menu](../ic-popover-menu)
 
-
 ### Depends on
 
-- [ic-button](../ic-button)
 - [ic-typography](../ic-typography)
-
+- [ic-button](../ic-button)
 
 ### Graph
 ```mermaid
 graph TD;
-  ic-menu-item --> ic-button
   ic-menu-item --> ic-typography
-  ic-popover-menu --> ic-menu-item
+  ic-menu-item --> ic-button
   ic-button --> ic-typography
   ic-button --> ic-loading-indicator
   ic-button --> ic-tooltip
+  ic-loading-indicator --> ic-typography
+  ic-tooltip --> ic-typography
+  ic-popover-menu --> ic-menu-item
   style ic-menu-item fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
