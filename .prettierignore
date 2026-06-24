@@ -11,3 +11,4 @@ packages/canary-react/src/components.ts
 packages/canary-react/src/stories
 
 packages/angular-community-supported/**/directives
+/.nx/workspace-data
