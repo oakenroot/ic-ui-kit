@@ -85,19 +85,13 @@ Type: `Promise<void>`
 
 ### Used by
 
- - [ic-accordion-group](../ic-accordion-group)
- - [ic-alert](../ic-alert)
- - [ic-back-to-top](../ic-back-to-top)
  - [ic-calendar](../../../../canary-web-components/src/components/ic-calendar)
  - [ic-data-table](../../../../canary-web-components/src/components/ic-data-table)
  - [ic-date-input](../../../../canary-web-components/src/components/ic-date-input)
- - [ic-dialog](../ic-dialog)
  - [ic-drawer](../../../../canary-web-components/src/components/ic-drawer)
  - [ic-horizontal-scroll](../ic-horizontal-scroll)
  - [ic-menu](../ic-menu)
  - [ic-menu-item](../ic-menu-item)
- - [ic-navigation-button](../ic-navigation-button)
- - [ic-navigation-menu](../ic-navigation-menu)
  - [ic-pagination](../ic-pagination)
  - [ic-pagination-bar](../ic-pagination-bar)
  - [ic-search-bar](../ic-search-bar)
@@ -105,37 +99,30 @@ Type: `Promise<void>`
  - [ic-side-navigation](../ic-side-navigation)
  - [ic-time-input](../../../../canary-web-components/src/components/ic-time-input)
  - [ic-time-selector](../../../../canary-web-components/src/components/ic-time-selector)
- - [ic-toast](../ic-toast)
  - [ic-toggle-button](../ic-toggle-button)
  - [ic-top-navigation](../ic-top-navigation)
 
-
 ### Depends on
 
+- [ic-typography](../ic-typography)
 - [ic-loading-indicator](../ic-loading-indicator)
 - [ic-tooltip](../ic-tooltip)
-- [ic-typography](../ic-typography)
-
 
 ### Graph
 ```mermaid
 graph TD;
+  ic-button --> ic-typography
   ic-button --> ic-loading-indicator
   ic-button --> ic-tooltip
-  ic-button --> ic-typography
-  ic-accordion-group --> ic-button
-  ic-alert --> ic-button
-  ic-back-to-top --> ic-button
+  ic-loading-indicator --> ic-typography
+  ic-tooltip --> ic-typography
   ic-calendar --> ic-button
   ic-data-table --> ic-button
   ic-date-input --> ic-button
-  ic-dialog --> ic-button
   ic-drawer --> ic-button
   ic-horizontal-scroll --> ic-button
   ic-menu --> ic-button
   ic-menu-item --> ic-button
-  ic-navigation-button --> ic-button
-  ic-navigation-menu --> ic-button
   ic-pagination --> ic-button
   ic-pagination-bar --> ic-button
   ic-search-bar --> ic-button
@@ -143,11 +130,8 @@ graph TD;
   ic-side-navigation --> ic-button
   ic-time-input --> ic-button
   ic-time-selector --> ic-button
-  ic-toast --> ic-button
   ic-toggle-button --> ic-button
   ic-top-navigation --> ic-button
-  ic-loading-indicator --> ic-typography
-  ic-tooltip --> ic-typography
   style ic-button fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

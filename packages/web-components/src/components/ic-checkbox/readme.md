@@ -59,11 +59,9 @@ Type: `Promise<void>`
 
  - [ic-data-table](../../../../canary-web-components/src/components/ic-data-table)
 
-
 ### Depends on
 
 - [ic-typography](../ic-typography)
-
 
 ### Graph
 ```mermaid

@@ -90,25 +90,26 @@ Type: `Promise<void>`
 
 ### Depends on
 
-- [ic-button](../ic-button)
-- [ic-input-component-container](../ic-input-component-container)
 - [ic-input-container](../ic-input-container)
 - [ic-input-label](../ic-input-label)
+- [ic-input-component-container](../ic-input-component-container)
+- [ic-button](../ic-button)
 - [ic-menu](../ic-menu)
-
 
 ### Graph
 ```mermaid
 graph TD;
-  ic-search-bar --> ic-button
-  ic-search-bar --> ic-input-component-container
   ic-search-bar --> ic-input-container
   ic-search-bar --> ic-input-label
+  ic-search-bar --> ic-input-component-container
+  ic-search-bar --> ic-button
   ic-search-bar --> ic-menu
+  ic-input-label --> ic-typography
   ic-button --> ic-typography
   ic-button --> ic-loading-indicator
   ic-button --> ic-tooltip
-  ic-input-label --> ic-typography
+  ic-loading-indicator --> ic-typography
+  ic-tooltip --> ic-typography
   ic-menu --> ic-loading-indicator
   ic-menu --> ic-typography
   ic-menu --> ic-button

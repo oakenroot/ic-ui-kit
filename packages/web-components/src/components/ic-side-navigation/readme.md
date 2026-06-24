@@ -50,21 +50,19 @@
 
 ### Depends on
 
-- [ic-button](../ic-button)
-- [ic-divider](../ic-divider)
 - [ic-typography](../ic-typography)
-
+- [ic-button](../ic-button)
 
 ### Graph
 ```mermaid
 graph TD;
-  ic-side-navigation --> ic-button
-  ic-side-navigation --> ic-divider
   ic-side-navigation --> ic-typography
+  ic-side-navigation --> ic-button
   ic-button --> ic-typography
   ic-button --> ic-loading-indicator
   ic-button --> ic-tooltip
-  ic-divider --> ic-typography
+  ic-loading-indicator --> ic-typography
+  ic-tooltip --> ic-typography
   style ic-side-navigation fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
