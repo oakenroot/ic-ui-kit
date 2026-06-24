@@ -21,7 +21,6 @@
     "dist/"
   ],
   "scripts": {
-    "audit": "echo 'Audit for: @ukic/canary-react' && audit-ci -m --config ../../audit-ci.json",
     "build": "npm run clean && npm run compile && npm run copy:core-css && npm run copy:normalize-css",
     "build-storybook": "rimraf ./storybook-static && storybook build",
     "clean": "rimraf dist",

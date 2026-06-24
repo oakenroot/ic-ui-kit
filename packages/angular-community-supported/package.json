@@ -23,8 +23,7 @@
     "prettier": "prettier --config ../../.prettierrc.json --ignore-path ../../.prettierignore src --check",
     "prettier:fix": "prettier --config ../../.prettierrc.json --ignore-path ../../.prettierignore src --write",
     "tsc": "tsc -p .",
-    "validate": "npm i && npm run build",
-    "audit:manual": "echo 'Audit for: @ukic/angular-community-supported' & audit-ci -m --config ../../audit-ci.json"
+    "validate": "npm i && npm run build"
   },
   "exports": {
     "./css/*": {

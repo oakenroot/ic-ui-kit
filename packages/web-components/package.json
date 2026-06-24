@@ -24,7 +24,6 @@
     "vscode-data.json"
   ],
   "scripts": {
-    "audit": "echo 'Audit for: @ukic/web-components' & audit-ci -m --config ../../audit-ci.json",
     "build": "stencil build",
     "build:watch": "npm run build -- --watch",
     "build-storybook": "rimraf /storybook-static && storybook build",
