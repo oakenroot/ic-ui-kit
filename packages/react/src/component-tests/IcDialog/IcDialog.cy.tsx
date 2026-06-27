@@ -71,14 +71,13 @@ describe("IcDialog end-to-end tests", () => {
 
     cy.get(DIALOG);
     cy.get("ic-button#display-btn-1-btn").click();
-    cy.wait(300);
+    cy.get("ic-button#test-button-1").should(HAVE_CLASS, "hydrated");
     cy.get("ic-button#display-btn-2-btn").click();
+    cy.get("ic-button#test-button-2").should(HAVE_CLASS, "hydrated");
     cy.get("ic-button#display-dialog-btn").click();
-    cy.wait(300);
     cy.get(DIALOG).should(HAVE_ATTR, "open");
     cy.get("ic-button#test-button-1")
       .should(BE_VISIBLE)
-      .should(HAVE_CLASS, "hydrated")
       .should(HAVE_FOCUS)
       .realPress("Tab");
     cy.get("ic-button#test-button-2").should(HAVE_FOCUS);
