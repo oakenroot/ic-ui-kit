@@ -148,7 +148,7 @@ describe("IcTopNavigation end-to-end tests", () => {
       mount(<TopNavWithNavItems />);
 
       cy.checkHydrated(NAV_GROUP_SELECTOR);
-      cy.get(TOP_NAV_SELECTOR).find(NAV_GROUP_SELECTOR).trigger("mouseenter");
+      cy.get(TOP_NAV_SELECTOR).find(NAV_GROUP_SELECTOR).realHover();
       cy.get(TOP_NAV_SELECTOR).find(NAV_ITEM_SELECTOR).should(BE_VISIBLE);
       cy.get(TOP_NAV_SELECTOR).find(NAV_ITEM_SELECTOR).click();
       cy.get(TOP_NAV_SELECTOR).find(NAV_ITEM_SELECTOR).should(NOT_BE_VISIBLE);
