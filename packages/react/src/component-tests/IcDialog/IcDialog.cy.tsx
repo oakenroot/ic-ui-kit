@@ -29,6 +29,7 @@ import {
 } from "./IcDialogTestData";
 import {
   BE_VISIBLE,
+  HAVE_CLASS,
   HAVE_FOCUS,
   NOT_EXIST,
   HAVE_ATTR,
@@ -75,8 +76,11 @@ describe("IcDialog end-to-end tests", () => {
     cy.get("ic-button#display-dialog-btn").click();
     cy.wait(300);
     cy.get(DIALOG).should(HAVE_ATTR, "open");
-    cy.get("ic-button#test-button-1").should(BE_VISIBLE);
-    cy.get("ic-button#test-button-1").should(HAVE_FOCUS).realPress("Tab");
+    cy.get("ic-button#test-button-1")
+      .should(BE_VISIBLE)
+      .should(HAVE_CLASS, "hydrated")
+      .should(HAVE_FOCUS)
+      .realPress("Tab");
     cy.get("ic-button#test-button-2").should(HAVE_FOCUS);
   });
 
