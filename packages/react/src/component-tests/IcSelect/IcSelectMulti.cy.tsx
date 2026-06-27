@@ -3,6 +3,7 @@
 import { mount } from "@cypress/react";
 import React from "react";
 import {
+  BE_VISIBLE,
   HAVE_ATTR,
   HAVE_BEEN_CALLED_ONCE,
   HAVE_CALL_COUNT,
@@ -580,6 +581,7 @@ describe("IcSelect - Multi visual regression tests in high contrast mode", () =>
 
     cy.checkHydrated(IC_SELECT);
     cy.findShadowEl(IC_SELECT, DROPDOWN_ARROW).click();
+    cy.findShadowEl(IC_SELECT, SELECT_ALL_BUTTON).should(BE_VISIBLE);
     cy.findShadowEl(IC_SELECT, DROPDOWN_ARROW).realPress("Tab");
 
     cy.findShadowEl(IC_SELECT, SELECT_ALL_BUTTON).should(HAVE_FOCUS);
@@ -594,6 +596,7 @@ describe("IcSelect - Multi visual regression tests in high contrast mode", () =>
 
     cy.checkHydrated(IC_SELECT);
     cy.findShadowEl(IC_SELECT, SELECT_INPUT).click();
+    cy.findShadowEl(IC_SELECT, "ic-menu ul li").should(BE_VISIBLE);
     cy.realPress("ArrowDown");
 
     cy.realPress("Tab");

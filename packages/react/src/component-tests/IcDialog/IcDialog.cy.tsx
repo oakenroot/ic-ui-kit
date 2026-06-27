@@ -75,6 +75,7 @@ describe("IcDialog end-to-end tests", () => {
     cy.get("ic-button#display-dialog-btn").click();
     cy.wait(300);
     cy.get(DIALOG).should(HAVE_ATTR, "open");
+    cy.get("ic-button#test-button-1").should(BE_VISIBLE);
     cy.get("ic-button#test-button-1").should(HAVE_FOCUS).realPress("Tab");
     cy.get("ic-button#test-button-2").should(HAVE_FOCUS);
   });
@@ -102,6 +103,7 @@ describe("IcDialog end-to-end tests", () => {
     cy.get(DIALOG).should(HAVE_ATTR, "open");
 
     cy.get(DYNAMIC_SHOW_BUTTON).click();
+    cy.get("ic-button#tab-btn").should(BE_VISIBLE);
 
     cy.findShadowEl(DYNAMIC_SHOW_BUTTON, "button").focus().realPress("Tab");
     cy.findShadowEl(DYNAMIC_SHOW_BUTTON, "button").realPress("Tab");
@@ -120,6 +122,7 @@ describe("IcDialog end-to-end tests", () => {
     cy.get(DIALOG);
     cy.wait(300);
     cy.get(DIALOG).should(HAVE_ATTR, "open");
+    cy.findShadowEl(DIALOG, CLOSE_ICON_BUTTON).should(BE_VISIBLE);
     cy.get("ic-link").should(HAVE_FOCUS);
 
     // after 2 tabs, the 2nd radio option should have focus
@@ -153,6 +156,7 @@ describe("IcDialog end-to-end tests", () => {
     cy.get(DIALOG);
     cy.wait(300);
     cy.get(DIALOG).should(HAVE_ATTR, "open");
+    cy.findShadowEl(DIALOG, CLOSE_ICON_BUTTON).should(BE_VISIBLE);
     cy.get("ic-tab").should(HAVE_FOCUS);
 
     // after 4 tabs, the tab should have focus again
@@ -383,6 +387,7 @@ describe("IcDialog visual regression and a11y tests", () => {
     cy.get(SLOTTED_DIALOG_BUTTON).click();
     cy.wait(300);
     cy.get(DIALOG).should(HAVE_ATTR, "open");
+    cy.findShadowEl(DIALOG, CLOSE_ICON_BUTTON).should(BE_VISIBLE);
     cy.get("ic-select").should(HAVE_FOCUS);
     cy.get("ic-select").click();
 
@@ -649,6 +654,7 @@ describe("IcDialog visual regression and a11y tests", () => {
     cy.get(DIALOG).should(HAVE_ATTR, "open");
 
     cy.get(DYNAMIC_SHOW_BUTTON).click();
+    cy.get("ic-button#tab-btn").should(BE_VISIBLE);
 
     cy.findShadowEl(DYNAMIC_SHOW_BUTTON, "button").focus().realPress("Tab");
     cy.findShadowEl(DYNAMIC_SHOW_BUTTON, "button").realPress("Tab");

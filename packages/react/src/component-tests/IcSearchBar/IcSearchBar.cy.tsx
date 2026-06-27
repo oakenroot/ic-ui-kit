@@ -295,6 +295,7 @@ describe("IcSearchBar end-to-end tests", () => {
     cy.checkHydrated(SEARCH_SELECTOR);
 
     cy.findShadowEl(SEARCH_SELECTOR, IC_INPUT_CONTAINER).type("Es");
+    cy.findShadowEl(SEARCH_SELECTOR, IC_MENU_LI).should(BE_VISIBLE);
     cy.realPress("ArrowDown");
     cy.findShadowEl(SEARCH_SELECTOR, IC_MENU_LI).should(HAVE_FOCUS);
   });
@@ -305,6 +306,7 @@ describe("IcSearchBar end-to-end tests", () => {
     cy.checkHydrated(SEARCH_SELECTOR);
 
     cy.findShadowEl(SEARCH_SELECTOR, IC_INPUT_CONTAINER).type("Es");
+    cy.findShadowEl(SEARCH_SELECTOR, IC_MENU_LI).should(BE_VISIBLE);
     cy.realPress("ArrowUp");
     cy.findShadowEl(SEARCH_SELECTOR, IC_MENU_LI).should(HAVE_FOCUS);
   });
@@ -315,6 +317,7 @@ describe("IcSearchBar end-to-end tests", () => {
     cy.checkHydrated(SEARCH_SELECTOR);
 
     cy.findShadowEl(SEARCH_SELECTOR, IC_INPUT_CONTAINER).type("Es");
+    cy.findShadowEl(SEARCH_SELECTOR, IC_MENU_LI).should(BE_VISIBLE);
     cy.realPress("End");
     cy.findShadowEl(SEARCH_SELECTOR, IC_MENU_LI).eq(1).should(HAVE_FOCUS);
     cy.realPress("Home");
@@ -363,6 +366,7 @@ describe("IcSearchBar end-to-end tests", () => {
     cy.checkHydrated(SEARCH_SELECTOR);
 
     cy.findShadowEl(SEARCH_SELECTOR, IC_INPUT_CONTAINER).type("Es");
+    cy.findShadowEl(SEARCH_SELECTOR, IC_MENU_LI).should(BE_VISIBLE);
     cy.realPress("ArrowDown");
     cy.findShadowEl(SEARCH_SELECTOR, IC_MENU_LI).eq(0).should(HAVE_FOCUS);
   });
@@ -395,6 +399,7 @@ describe("IcSearchBar end-to-end tests", () => {
     cy.checkHydrated(SEARCH_SELECTOR);
 
     cy.findShadowEl(SEARCH_SELECTOR, IC_INPUT_CONTAINER).type("Es");
+    cy.findShadowEl(SEARCH_SELECTOR, IC_MENU_LI).should(BE_VISIBLE);
     cy.realPress("ArrowUp");
     cy.realPress("Enter");
     cy.get(SEARCH_SELECTOR).should(HAVE_VALUE, "doubleespresso");
@@ -440,6 +445,7 @@ describe("IcSearchBar end-to-end tests", () => {
     );
 
     cy.findShadowEl(SEARCH_SELECTOR, IC_INPUT_CONTAINER).type("Es");
+    cy.findShadowEl(SEARCH_SELECTOR, IC_MENU_LI).should(BE_VISIBLE);
     cy.realPress("Enter");
     cy.get("@icOptionSelect").should(HAVE_BEEN_CALLED_ONCE);
   });
@@ -482,6 +488,7 @@ describe("IcSearchBar end-to-end tests", () => {
     );
 
     cy.findShadowEl(SEARCH_SELECTOR, IC_INPUT_CONTAINER).type("Espresso");
+    cy.findShadowEl(SEARCH_SELECTOR, CLEAR_BUTTON_ID).should(BE_VISIBLE);
     cy.realPress("Tab");
     cy.realPress("Enter");
     cy.get(IC_SUBMIT_SEARCH_EVENT_ID).should(NOT_HAVE_BEEN_CALLED);
@@ -516,6 +523,7 @@ describe("IcSearchBar end-to-end tests", () => {
     );
 
     cy.findShadowEl(SEARCH_SELECTOR, IC_INPUT_CONTAINER).type("Espresso");
+    cy.findShadowEl(SEARCH_SELECTOR, CLEAR_BUTTON_ID).should(BE_VISIBLE);
     cy.realPress("Tab");
     cy.realPress("Tab");
     cy.realPress("Space");
@@ -540,10 +548,12 @@ describe("IcSearchBar end-to-end tests", () => {
     cy.checkHydrated(SEARCH_SELECTOR);
 
     cy.findShadowEl(SEARCH_SELECTOR, IC_INPUT_CONTAINER).type("Es");
+    cy.findShadowEl(SEARCH_SELECTOR, IC_MENU_LI).should(BE_VISIBLE);
     cy.realPress("Enter");
     cy.get(SEARCH_SELECTOR).should(HAVE_VALUE, "espresso");
     cy.get("body").click("bottomRight");
     cy.findShadowEl(SEARCH_SELECTOR, IC_INPUT_CONTAINER).click();
+    cy.findShadowEl(SEARCH_SELECTOR, IC_MENU_LI).should(BE_VISIBLE);
     cy.realPress("ArrowDown");
     cy.realPress("Enter");
     cy.get(SEARCH_SELECTOR).should(HAVE_VALUE, "doubleespresso");
@@ -556,6 +566,7 @@ describe("IcSearchBar end-to-end tests", () => {
 
     cy.findShadowEl(SEARCH_SELECTOR, IC_INPUT_CONTAINER).type("Es");
     cy.get(SEARCH_SELECTOR).should(HAVE_FOCUS);
+    cy.findShadowEl(SEARCH_SELECTOR, CLEAR_BUTTON_ID).should(BE_VISIBLE);
     cy.realPress("Tab");
     cy.findShadowEl(SEARCH_SELECTOR, CLEAR_BUTTON_ID).should(HAVE_FOCUS);
     cy.realPress("Tab");
@@ -714,6 +725,7 @@ describe("IcSearchBar end-to-end tests", () => {
     cy.checkHydrated(SEARCH_SELECTOR);
 
     cy.findShadowEl(SEARCH_SELECTOR, IC_INPUT_CONTAINER).type("Es");
+    cy.findShadowEl(SEARCH_SELECTOR, IC_MENU_LI).should(BE_VISIBLE);
     cy.realPress("ArrowDown");
     cy.findShadowEl(SEARCH_SELECTOR, IC_MENU_LI).should(HAVE_FOCUS);
     cy.findShadowEl(SEARCH_SELECTOR, IC_INPUT_CONTAINER).type("p");
@@ -1029,6 +1041,7 @@ describe("IcSearchBar visual regression and a11y tests", () => {
     cy.checkHydrated(SEARCH_SELECTOR);
 
     cy.findShadowEl(SEARCH_SELECTOR, SEARCH_INPUT).type("Es");
+    cy.findShadowEl(SEARCH_SELECTOR, CLEAR_BUTTON_ID).should(BE_VISIBLE);
     cy.realPress("Tab");
     cy.realPress("Tab");
     cy.findShadowEl(SEARCH_SELECTOR, SEARCH_SUBMIT_BUTTON_ID).should(
@@ -1096,6 +1109,7 @@ describe("IcSearchBar visual regression and a11y tests", () => {
     cy.checkHydrated(SEARCH_SELECTOR);
 
     cy.findShadowEl(SEARCH_SELECTOR, SEARCH_INPUT).type("Lat");
+    cy.findShadowEl(SEARCH_SELECTOR, CLEAR_BUTTON_ID).should(BE_VISIBLE);
 
     cy.realPress("Tab");
 
