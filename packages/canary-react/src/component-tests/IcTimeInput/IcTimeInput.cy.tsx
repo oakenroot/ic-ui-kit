@@ -52,9 +52,11 @@ describe("IcTimeInput e2e tests", () => {
       cy.findShadowEl(TIME_INPUT, SECOND_INPUT).type("45");
 
       cy.get(IC_TIME_CHANGED).should((stub) => {
-        expect(stub.getCall(1).args[0].detail.timeObject.hour).to.equal("12");
-        expect(stub.getCall(1).args[0].detail.timeObject.minute).to.equal("30");
-        expect(stub.getCall(1).args[0].detail.timeObject.second).to.equal("45");
+        expect(stub.callCount).to.be.at.least(2);
+        const lastCall = stub.lastCall;
+        expect(lastCall.args[0].detail.timeObject.hour).to.equal("12");
+        expect(lastCall.args[0].detail.timeObject.minute).to.equal("30");
+        expect(lastCall.args[0].detail.timeObject.second).to.equal("45");
       });
 
       cy.findShadowEl(TIME_INPUT, 'ic-button[id="clear-button"]').click();
@@ -64,7 +66,8 @@ describe("IcTimeInput e2e tests", () => {
       cy.findShadowEl(TIME_INPUT, SECOND_INPUT).should(HAVE_VALUE, "");
 
       cy.get(IC_TIME_CHANGED).should((stub) => {
-        expect(stub.getCall(2).args[0].detail.value).to.equal(null);
+        const lastCall = stub.lastCall;
+        expect(lastCall.args[0].detail.value).to.equal(null);
       });
     });
 

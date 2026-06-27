@@ -4564,7 +4564,7 @@ describe("IcDataTable table with descriptions", () => {
         data={LONG_DATA_ELEMENTS_WITH_DESCRIPTIONS}
         caption="Data Tables"
         truncationPattern={TRUNCATION_TOOLTIP}
-        globalRowHeight={250}
+        globalRowHeight={500}
       />
     );
 

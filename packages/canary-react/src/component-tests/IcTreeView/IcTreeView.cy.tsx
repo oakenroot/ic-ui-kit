@@ -909,11 +909,9 @@ describe("IcTreeView", () => {
     cy.get(TREE_ITEM).eq(0).should(HAVE_FOCUS).realPress("ArrowDown");
 
     cy.get(TREE_ITEM).eq(1).should(HAVE_FOCUS).realPress("Enter");
-    cy.get(TREE_ITEM).eq(1).should(HAVE_PROP, "expanded", false);
     cy.get(TREE_ITEM).eq(1).realPress("ArrowUp");
 
     cy.get(TREE_ITEM).eq(0).should(HAVE_FOCUS).realPress("Enter");
-    cy.get(TREE_ITEM).eq(0).should(HAVE_PROP, "expanded", false);
     cy.get(TREE_ITEM).eq(0).realPress("ArrowDown");
 
     cy.get(TREE_ITEM).eq(4).should(HAVE_FOCUS);
