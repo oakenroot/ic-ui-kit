@@ -327,6 +327,9 @@ describe("IcSearchBar end-to-end tests", () => {
     cy.checkHydrated(SEARCH_SELECTOR);
 
     cy.findShadowEl(SEARCH_SELECTOR, IC_INPUT_CONTAINER).type("Es");
+    cy.findShadowEl(SEARCH_SELECTOR, IC_MENU_LI)
+      .eq(0)
+      .should(HAVE_CLASS, FOCUSED_OPTION_CLASS_SELECTOR);
 
     cy.realPress("Enter");
     cy.get(SEARCH_SELECTOR).should(HAVE_VALUE, "espresso");
