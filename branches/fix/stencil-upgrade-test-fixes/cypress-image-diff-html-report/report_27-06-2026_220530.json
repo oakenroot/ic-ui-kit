@@ -1,7 +1,7 @@
 {
   "total": 935,
-  "totalPassed": 934,
-  "totalFailed": 1,
+  "totalPassed": 935,
+  "totalFailed": 0,
   "totalSuites": 46,
   "suites": [
     {
@@ -2540,6 +2540,122 @@
       ]
     },
     {
+      "name": "IcClassificationBanner.cy.tsx",
+      "path": "src/component-tests/IcClassificationBanner/IcClassificationBanner.cy.tsx",
+      "tests": [
+        {
+          "status": "pass",
+          "name": "IcClassificationBanner.cy.tsx/default",
+          "percentage": 0,
+          "failureThreshold": 0,
+          "specPath": "src/component-tests/IcClassificationBanner/IcClassificationBanner.cy.tsx",
+          "specFilename": "IcClassificationBanner.cy.tsx",
+          "baselinePath": "cypress-image-diff-screenshots/baseline/IcClassificationBanner.cy.tsx/default.png",
+          "diffPath": "",
+          "comparisonPath": "cypress-image-diff-screenshots/comparison/IcClassificationBanner.cy.tsx/default.png"
+        },
+        {
+          "status": "pass",
+          "name": "IcClassificationBanner.cy.tsx/undefined",
+          "percentage": 0,
+          "failureThreshold": 0,
+          "specPath": "src/component-tests/IcClassificationBanner/IcClassificationBanner.cy.tsx",
+          "specFilename": "IcClassificationBanner.cy.tsx",
+          "baselinePath": "cypress-image-diff-screenshots/baseline/IcClassificationBanner.cy.tsx/undefined.png",
+          "diffPath": "",
+          "comparisonPath": "cypress-image-diff-screenshots/comparison/IcClassificationBanner.cy.tsx/undefined.png"
+        },
+        {
+          "status": "pass",
+          "name": "IcClassificationBanner.cy.tsx/official",
+          "percentage": 0,
+          "failureThreshold": 0,
+          "specPath": "src/component-tests/IcClassificationBanner/IcClassificationBanner.cy.tsx",
+          "specFilename": "IcClassificationBanner.cy.tsx",
+          "baselinePath": "cypress-image-diff-screenshots/baseline/IcClassificationBanner.cy.tsx/official.png",
+          "diffPath": "",
+          "comparisonPath": "cypress-image-diff-screenshots/comparison/IcClassificationBanner.cy.tsx/official.png"
+        },
+        {
+          "status": "pass",
+          "name": "IcClassificationBanner.cy.tsx/official-sensitive",
+          "percentage": 0,
+          "failureThreshold": 0,
+          "specPath": "src/component-tests/IcClassificationBanner/IcClassificationBanner.cy.tsx",
+          "specFilename": "IcClassificationBanner.cy.tsx",
+          "baselinePath": "cypress-image-diff-screenshots/baseline/IcClassificationBanner.cy.tsx/official-sensitive.png",
+          "diffPath": "",
+          "comparisonPath": "cypress-image-diff-screenshots/comparison/IcClassificationBanner.cy.tsx/official-sensitive.png"
+        },
+        {
+          "status": "pass",
+          "name": "IcClassificationBanner.cy.tsx/secret",
+          "percentage": 0,
+          "failureThreshold": 0,
+          "specPath": "src/component-tests/IcClassificationBanner/IcClassificationBanner.cy.tsx",
+          "specFilename": "IcClassificationBanner.cy.tsx",
+          "baselinePath": "cypress-image-diff-screenshots/baseline/IcClassificationBanner.cy.tsx/secret.png",
+          "diffPath": "",
+          "comparisonPath": "cypress-image-diff-screenshots/comparison/IcClassificationBanner.cy.tsx/secret.png"
+        },
+        {
+          "status": "pass",
+          "name": "IcClassificationBanner.cy.tsx/top-secret",
+          "percentage": 0,
+          "failureThreshold": 0,
+          "specPath": "src/component-tests/IcClassificationBanner/IcClassificationBanner.cy.tsx",
+          "specFilename": "IcClassificationBanner.cy.tsx",
+          "baselinePath": "cypress-image-diff-screenshots/baseline/IcClassificationBanner.cy.tsx/top-secret.png",
+          "diffPath": "",
+          "comparisonPath": "cypress-image-diff-screenshots/comparison/IcClassificationBanner.cy.tsx/top-secret.png"
+        },
+        {
+          "status": "pass",
+          "name": "IcClassificationBanner.cy.tsx/country-official",
+          "percentage": 0,
+          "failureThreshold": 0,
+          "specPath": "src/component-tests/IcClassificationBanner/IcClassificationBanner.cy.tsx",
+          "specFilename": "IcClassificationBanner.cy.tsx",
+          "baselinePath": "cypress-image-diff-screenshots/baseline/IcClassificationBanner.cy.tsx/country-official.png",
+          "diffPath": "",
+          "comparisonPath": "cypress-image-diff-screenshots/comparison/IcClassificationBanner.cy.tsx/country-official.png"
+        },
+        {
+          "status": "pass",
+          "name": "IcClassificationBanner.cy.tsx/up-to-official",
+          "percentage": 0,
+          "failureThreshold": 0,
+          "specPath": "src/component-tests/IcClassificationBanner/IcClassificationBanner.cy.tsx",
+          "specFilename": "IcClassificationBanner.cy.tsx",
+          "baselinePath": "cypress-image-diff-screenshots/baseline/IcClassificationBanner.cy.tsx/up-to-official.png",
+          "diffPath": "",
+          "comparisonPath": "cypress-image-diff-screenshots/comparison/IcClassificationBanner.cy.tsx/up-to-official.png"
+        },
+        {
+          "status": "pass",
+          "name": "IcClassificationBanner.cy.tsx/inline-official",
+          "percentage": 0,
+          "failureThreshold": 0,
+          "specPath": "src/component-tests/IcClassificationBanner/IcClassificationBanner.cy.tsx",
+          "specFilename": "IcClassificationBanner.cy.tsx",
+          "baselinePath": "cypress-image-diff-screenshots/baseline/IcClassificationBanner.cy.tsx/inline-official.png",
+          "diffPath": "",
+          "comparisonPath": "cypress-image-diff-screenshots/comparison/IcClassificationBanner.cy.tsx/inline-official.png"
+        },
+        {
+          "status": "pass",
+          "name": "IcClassificationBanner.cy.tsx/up-to-official-high-contrast",
+          "percentage": 0,
+          "failureThreshold": 0,
+          "specPath": "src/component-tests/IcClassificationBanner/IcClassificationBanner.cy.tsx",
+          "specFilename": "IcClassificationBanner.cy.tsx",
+          "baselinePath": "cypress-image-diff-screenshots/baseline/IcClassificationBanner.cy.tsx/up-to-official-high-contrast.png",
+          "diffPath": "",
+          "comparisonPath": "cypress-image-diff-screenshots/comparison/IcClassificationBanner.cy.tsx/up-to-official-high-contrast.png"
+        }
+      ]
+    },
+    {
       "name": "IcChip.cy.tsx",
       "path": "src/component-tests/IcChip/IcChip.cy.tsx",
       "tests": [
@@ -2707,122 +2823,6 @@
           "baselinePath": "cypress-image-diff-screenshots/baseline/IcChip.cy.tsx/dismissible-focus-high-contrast.png",
           "diffPath": "",
           "comparisonPath": "cypress-image-diff-screenshots/comparison/IcChip.cy.tsx/dismissible-focus-high-contrast.png"
-        }
-      ]
-    },
-    {
-      "name": "IcClassificationBanner.cy.tsx",
-      "path": "src/component-tests/IcClassificationBanner/IcClassificationBanner.cy.tsx",
-      "tests": [
-        {
-          "status": "pass",
-          "name": "IcClassificationBanner.cy.tsx/default",
-          "percentage": 0,
-          "failureThreshold": 0,
-          "specPath": "src/component-tests/IcClassificationBanner/IcClassificationBanner.cy.tsx",
-          "specFilename": "IcClassificationBanner.cy.tsx",
-          "baselinePath": "cypress-image-diff-screenshots/baseline/IcClassificationBanner.cy.tsx/default.png",
-          "diffPath": "",
-          "comparisonPath": "cypress-image-diff-screenshots/comparison/IcClassificationBanner.cy.tsx/default.png"
-        },
-        {
-          "status": "pass",
-          "name": "IcClassificationBanner.cy.tsx/undefined",
-          "percentage": 0,
-          "failureThreshold": 0,
-          "specPath": "src/component-tests/IcClassificationBanner/IcClassificationBanner.cy.tsx",
-          "specFilename": "IcClassificationBanner.cy.tsx",
-          "baselinePath": "cypress-image-diff-screenshots/baseline/IcClassificationBanner.cy.tsx/undefined.png",
-          "diffPath": "",
-          "comparisonPath": "cypress-image-diff-screenshots/comparison/IcClassificationBanner.cy.tsx/undefined.png"
-        },
-        {
-          "status": "pass",
-          "name": "IcClassificationBanner.cy.tsx/official",
-          "percentage": 0,
-          "failureThreshold": 0,
-          "specPath": "src/component-tests/IcClassificationBanner/IcClassificationBanner.cy.tsx",
-          "specFilename": "IcClassificationBanner.cy.tsx",
-          "baselinePath": "cypress-image-diff-screenshots/baseline/IcClassificationBanner.cy.tsx/official.png",
-          "diffPath": "",
-          "comparisonPath": "cypress-image-diff-screenshots/comparison/IcClassificationBanner.cy.tsx/official.png"
-        },
-        {
-          "status": "pass",
-          "name": "IcClassificationBanner.cy.tsx/official-sensitive",
-          "percentage": 0,
-          "failureThreshold": 0,
-          "specPath": "src/component-tests/IcClassificationBanner/IcClassificationBanner.cy.tsx",
-          "specFilename": "IcClassificationBanner.cy.tsx",
-          "baselinePath": "cypress-image-diff-screenshots/baseline/IcClassificationBanner.cy.tsx/official-sensitive.png",
-          "diffPath": "",
-          "comparisonPath": "cypress-image-diff-screenshots/comparison/IcClassificationBanner.cy.tsx/official-sensitive.png"
-        },
-        {
-          "status": "pass",
-          "name": "IcClassificationBanner.cy.tsx/secret",
-          "percentage": 0,
-          "failureThreshold": 0,
-          "specPath": "src/component-tests/IcClassificationBanner/IcClassificationBanner.cy.tsx",
-          "specFilename": "IcClassificationBanner.cy.tsx",
-          "baselinePath": "cypress-image-diff-screenshots/baseline/IcClassificationBanner.cy.tsx/secret.png",
-          "diffPath": "",
-          "comparisonPath": "cypress-image-diff-screenshots/comparison/IcClassificationBanner.cy.tsx/secret.png"
-        },
-        {
-          "status": "pass",
-          "name": "IcClassificationBanner.cy.tsx/top-secret",
-          "percentage": 0,
-          "failureThreshold": 0,
-          "specPath": "src/component-tests/IcClassificationBanner/IcClassificationBanner.cy.tsx",
-          "specFilename": "IcClassificationBanner.cy.tsx",
-          "baselinePath": "cypress-image-diff-screenshots/baseline/IcClassificationBanner.cy.tsx/top-secret.png",
-          "diffPath": "",
-          "comparisonPath": "cypress-image-diff-screenshots/comparison/IcClassificationBanner.cy.tsx/top-secret.png"
-        },
-        {
-          "status": "pass",
-          "name": "IcClassificationBanner.cy.tsx/country-official",
-          "percentage": 0,
-          "failureThreshold": 0,
-          "specPath": "src/component-tests/IcClassificationBanner/IcClassificationBanner.cy.tsx",
-          "specFilename": "IcClassificationBanner.cy.tsx",
-          "baselinePath": "cypress-image-diff-screenshots/baseline/IcClassificationBanner.cy.tsx/country-official.png",
-          "diffPath": "",
-          "comparisonPath": "cypress-image-diff-screenshots/comparison/IcClassificationBanner.cy.tsx/country-official.png"
-        },
-        {
-          "status": "pass",
-          "name": "IcClassificationBanner.cy.tsx/up-to-official",
-          "percentage": 0,
-          "failureThreshold": 0,
-          "specPath": "src/component-tests/IcClassificationBanner/IcClassificationBanner.cy.tsx",
-          "specFilename": "IcClassificationBanner.cy.tsx",
-          "baselinePath": "cypress-image-diff-screenshots/baseline/IcClassificationBanner.cy.tsx/up-to-official.png",
-          "diffPath": "",
-          "comparisonPath": "cypress-image-diff-screenshots/comparison/IcClassificationBanner.cy.tsx/up-to-official.png"
-        },
-        {
-          "status": "pass",
-          "name": "IcClassificationBanner.cy.tsx/inline-official",
-          "percentage": 0,
-          "failureThreshold": 0,
-          "specPath": "src/component-tests/IcClassificationBanner/IcClassificationBanner.cy.tsx",
-          "specFilename": "IcClassificationBanner.cy.tsx",
-          "baselinePath": "cypress-image-diff-screenshots/baseline/IcClassificationBanner.cy.tsx/inline-official.png",
-          "diffPath": "",
-          "comparisonPath": "cypress-image-diff-screenshots/comparison/IcClassificationBanner.cy.tsx/inline-official.png"
-        },
-        {
-          "status": "pass",
-          "name": "IcClassificationBanner.cy.tsx/up-to-official-high-contrast",
-          "percentage": 0,
-          "failureThreshold": 0,
-          "specPath": "src/component-tests/IcClassificationBanner/IcClassificationBanner.cy.tsx",
-          "specFilename": "IcClassificationBanner.cy.tsx",
-          "baselinePath": "cypress-image-diff-screenshots/baseline/IcClassificationBanner.cy.tsx/up-to-official-high-contrast.png",
-          "diffPath": "",
-          "comparisonPath": "cypress-image-diff-screenshots/comparison/IcClassificationBanner.cy.tsx/up-to-official-high-contrast.png"
         }
       ]
     },
@@ -9975,14 +9975,14 @@
           "comparisonPath": "cypress-image-diff-screenshots/comparison/IcTopNavigation.cy.tsx/navigation-items.png"
         },
         {
-          "status": "fail",
+          "status": "pass",
           "name": "IcTopNavigation.cy.tsx/navigation-item-with-focus-indicator",
-          "percentage": 0.058631673438457356,
+          "percentage": 0,
           "failureThreshold": 0,
           "specPath": "src/component-tests/IcTopNavigation/IcTopNavigation.cy.tsx",
           "specFilename": "IcTopNavigation.cy.tsx",
           "baselinePath": "cypress-image-diff-screenshots/baseline/IcTopNavigation.cy.tsx/navigation-item-with-focus-indicator.png",
-          "diffPath": "cypress-image-diff-screenshots/diff/IcTopNavigation.cy.tsx/navigation-item-with-focus-indicator.png",
+          "diffPath": "",
           "comparisonPath": "cypress-image-diff-screenshots/comparison/IcTopNavigation.cy.tsx/navigation-item-with-focus-indicator.png"
         },
         {
@@ -10566,9 +10566,9 @@
       ]
     }
   ],
-  "startedAt": "2026-06-27T21:34:23.520Z",
-  "endedAt": "2026-06-27T21:55:39.735Z",
-  "duration": 1168489,
+  "startedAt": "2026-06-27T22:05:30.514Z",
+  "endedAt": "2026-06-27T22:26:45.316Z",
+  "duration": 1163849,
   "browserName": "electron",
   "browserVersion": "118.0.5993.159",
   "cypressVersion": "13.17.0"
