@@ -80,7 +80,7 @@ describe("IcDialog end-to-end tests", () => {
     cy.get("ic-button#test-button-2").should(BE_VISIBLE);
     // Explicitly focus the first button to reliably test Tab navigation.
     // The dialog's auto-focus timing can vary across environments.
-    cy.get("ic-button#test-button-1").shadow().find("button").focus();
+    cy.get("ic-button#test-button-1").focus();
     cy.get("ic-button#test-button-1").should(HAVE_FOCUS).realPress("Tab");
     cy.get("ic-button#test-button-2").should(HAVE_FOCUS);
   });

@@ -608,17 +608,17 @@ describe("IcSearchBar end-to-end tests", () => {
 
     cy.checkHydrated(SEARCH_SELECTOR);
 
+    // Type into search bar then click away to close the menu
     cy.findShadowEl(SEARCH_SELECTOR, IC_INPUT_CONTAINER).type("Es");
     cy.findShadowEl(SEARCH_SELECTOR, IC_MENU_LI).should(BE_VISIBLE);
-    // Focus the search submit button directly. This blurs the menu,
-    // causing it to close. The submit button is the last tab-stop inside
-    // the search bar's shadow DOM, so Tab from here exits to the external
-    // button.
+    cy.get("body").click("bottomRight");
+    cy.findShadowEl(SEARCH_SELECTOR, IC_MENU_LI).should(NOT_EXIST);
+    // Focus the search submit button (last tab-stop inside the shadow
+    // DOM) and Tab to the external button
     cy.findShadowEl(SEARCH_SELECTOR, SEARCH_SUBMIT_BUTTON_ID)
       .shadow()
       .find("button")
       .focus();
-    cy.findShadowEl(SEARCH_SELECTOR, IC_MENU_LI).should(NOT_EXIST);
     cy.realPress("Tab");
     cy.get("#button").should(HAVE_FOCUS);
   });
