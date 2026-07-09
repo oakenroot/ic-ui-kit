@@ -1498,6 +1498,7 @@ export namespace Components {
         "checked"?: boolean;
         /**
           * If `true`, the menu will close when this menu item is clicked.
+          * @default true
          */
         "closeMenuOnSelect"?: boolean;
         /**
@@ -1869,6 +1870,7 @@ export namespace Components {
         "closeMenu": (setFocusToAnchor?: boolean, menuElement?: HTMLIcMenuItemElement) => Promise<void>;
         /**
           * If `always`, the popover menu will close when any menu item is clicked. If `toggle`, the popover menu will close when a non-toggle menu item is clicked. If `never`, the popover menu will not close when any menu item is clicked.
+          * @default "always"
          */
         "closeOnItemSelect": "always" | "toggle" | "never";
         /**
@@ -5981,6 +5983,7 @@ declare namespace LocalJSX {
         "checked"?: boolean;
         /**
           * If `true`, the menu will close when this menu item is clicked.
+          * @default true
          */
         "closeMenuOnSelect"?: boolean;
         /**
@@ -6363,6 +6366,7 @@ declare namespace LocalJSX {
         "anchor"?: string;
         /**
           * If `always`, the popover menu will close when any menu item is clicked. If `toggle`, the popover menu will close when a non-toggle menu item is clicked. If `never`, the popover menu will not close when any menu item is clicked.
+          * @default "always"
          */
         "closeOnItemSelect"?: "always" | "toggle" | "never";
         /**
@@ -8383,6 +8387,7 @@ declare namespace LocalJSX {
         "submenuTriggerFor": string;
         "target": string;
         "variant": IcMenuItemVariants;
+        "closeMenuOnSelect": boolean;
     }
     interface IcNavigationItemAttributes {
         "collapsedIconLabel": boolean;
@@ -8462,6 +8467,7 @@ declare namespace LocalJSX {
         "submenuLevel": number;
         "theme": IcThemeMode;
         "open": boolean | undefined;
+        "closeOnItemSelect": "always" | "toggle" | "never";
     }
     interface IcRadioGroupAttributes {
         "disabled": boolean;
