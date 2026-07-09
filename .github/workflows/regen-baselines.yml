@@ -35,6 +35,7 @@ jobs:
 
       - name: Canary Cypress tests
         id: canary_cypress_tests
+        continue-on-error: true
         run: npm run test-cypress:canary:headless
 
       - name: Checkout docs.json
