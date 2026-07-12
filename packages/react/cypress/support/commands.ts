@@ -10,7 +10,7 @@ import {
 
 import "cypress-file-upload";
 
-import compareSnapshotCommand from "cypress-image-diff-js/command";
+import compareSnapshotCommand from "cypress-image-diff-js";
 compareSnapshotCommand();
 
 // Create the typing for the getCall command
@@ -20,15 +20,11 @@ declare global {
   }
 }
 
-// Create the typing for the compareSnapshot command
+// Create the typing for the custom commands (compareSnapshot is typed by
+// cypress-image-diff-js itself)
 declare global {
   namespace Cypress {
     interface Chainable {
-      /**
-       * Compare the mounted component against the named snapshot
-       * @param {string} snapName the name of the snapshot to capture and compare with
-       */
-      compareSnapshot: typeof compareSnapshotCommand;
       /**
        * Check that the provided element has the hydrated class applied
        * @param {string} element identifier of the element to check

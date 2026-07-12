@@ -16,6 +16,13 @@ export const config: Cypress.ConfigOptions = {
         if (browser.family === "chromium" && browser.name !== "electron") {
           launchOptions.args.push("--window-size=1920,1080");
           launchOptions.args.push("--force-device-scale-factor=1");
+          // Make rendering deterministic so visual regression snapshots are
+          // reproducible between runs
+          launchOptions.args.push("--force-color-profile=srgb");
+          launchOptions.args.push("--disable-lcd-text");
+          launchOptions.args.push("--font-render-hinting=none");
+          launchOptions.args.push("--disable-gpu");
+          launchOptions.args.push("--disable-checker-imaging");
         }
         return launchOptions;
       });

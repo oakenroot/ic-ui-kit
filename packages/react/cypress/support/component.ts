@@ -1,3 +1,4 @@
+import "./deterministic-render";
 import "./commands";
 import "cypress-axe";
 
