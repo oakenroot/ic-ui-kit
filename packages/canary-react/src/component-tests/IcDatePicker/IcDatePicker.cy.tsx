@@ -1,5 +1,4 @@
 /* eslint-disable react/jsx-no-bind */
-/// <reference types="Cypress" />
 import "./IcDatePicker.css";
 import React from "react";
 import { mount } from "cypress/react";

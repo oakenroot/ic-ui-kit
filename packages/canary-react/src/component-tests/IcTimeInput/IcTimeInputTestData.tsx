@@ -2,21 +2,9 @@ import React, { useState } from "react";
 import { IcTimeInput } from "../../components";
 import { IcTypography, IcLink, IcButton } from "@ukic/react";
 
-export const DefaultTimeInput = (timeInputProps?: {
-  disabled?: boolean;
-  size?: string;
-  value?: string | Date;
-  hideLabel?: boolean;
-  hideHelperText?: boolean;
-  required?: boolean;
-  timeFormat?: string;
-  timePeriod?: string;
-  showAmPmToggle?: boolean;
-  disableTimes?: any[];
-  min?: string;
-  max?: string;
-  theme?: string;
-}) => {
+export const DefaultTimeInput = (
+  timeInputProps?: Partial<React.ComponentProps<typeof IcTimeInput>>
+) => {
   return (
     <IcTimeInput
       label="What time would you like to collect your coffee?"
@@ -70,10 +58,10 @@ export const ValidationStatusTimeInput = () => {
 };
 
 export const DisableTimesTimeInput = () => {
+  // Bare time strings are not part of IcDisableTimeSelection and are
+  // ignored at runtime, so only start/end ranges are passed
   return (
-    <DefaultTimeInput
-      disableTimes={[{ start: "08:00:00", end: "10:00:00" }, "13:20:00"]}
-    />
+    <DefaultTimeInput disableTimes={[{ start: "08:00:00", end: "10:00:00" }]} />
   );
 };
 
