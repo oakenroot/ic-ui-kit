@@ -21,7 +21,6 @@ export const config: Cypress.ConfigOptions = {
           launchOptions.args.push("--force-color-profile=srgb");
           launchOptions.args.push("--disable-lcd-text");
           launchOptions.args.push("--font-render-hinting=none");
-          launchOptions.args.push("--disable-gpu");
           launchOptions.args.push("--disable-checker-imaging");
         }
         return launchOptions;
