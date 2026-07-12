@@ -577,7 +577,6 @@ describe("IcDialog visual regression and a11y tests", () => {
     cy.compareSnapshot({
       name: "/destructive-dialog-controls",
       testThreshold: setThresholdBasedOnEnv(DEFAULT_TEST_THRESHOLD + 0.015),
-      delay: 1000,
     });
   });
 

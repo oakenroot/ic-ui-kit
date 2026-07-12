@@ -306,7 +306,6 @@ describe("IcTooltip visual regression and a11y tests", () => {
     cy.compareSnapshot({
       name: "/default",
       testThreshold: setThresholdBasedOnEnv(DEFAULT_TEST_THRESHOLD + 0.004),
-      delay: 200,
     });
   });
 
@@ -320,7 +319,6 @@ describe("IcTooltip visual regression and a11y tests", () => {
     cy.compareSnapshot({
       name: "/very-large-label",
       testThreshold: setThresholdBasedOnEnv(DEFAULT_TEST_THRESHOLD + 0.086),
-      delay: 500,
     });
   });
 
@@ -334,7 +332,6 @@ describe("IcTooltip visual regression and a11y tests", () => {
     cy.compareSnapshot({
       name: "/top-placement-start",
       testThreshold: setThresholdBasedOnEnv(DEFAULT_TEST_THRESHOLD + 0.004),
-      delay: 200,
     });
   });
 
@@ -348,7 +345,6 @@ describe("IcTooltip visual regression and a11y tests", () => {
     cy.compareSnapshot({
       name: "/top-placement",
       testThreshold: setThresholdBasedOnEnv(DEFAULT_TEST_THRESHOLD + 0.004),
-      delay: 200,
     });
   });
 
@@ -362,7 +358,6 @@ describe("IcTooltip visual regression and a11y tests", () => {
     cy.compareSnapshot({
       name: "/top-placement-end",
       testThreshold: setThresholdBasedOnEnv(DEFAULT_TEST_THRESHOLD + 0.006),
-      delay: 200,
     });
   });
 
@@ -376,7 +371,6 @@ describe("IcTooltip visual regression and a11y tests", () => {
     cy.compareSnapshot({
       name: "/bottom-placement-start",
       testThreshold: setThresholdBasedOnEnv(DEFAULT_TEST_THRESHOLD + 0.009),
-      delay: 200,
     });
   });
 
@@ -390,7 +384,6 @@ describe("IcTooltip visual regression and a11y tests", () => {
     cy.compareSnapshot({
       name: "/bottom-placement",
       testThreshold: setThresholdBasedOnEnv(DEFAULT_TEST_THRESHOLD + 0.009),
-      delay: 200,
     });
   });
 
@@ -404,7 +397,6 @@ describe("IcTooltip visual regression and a11y tests", () => {
     cy.compareSnapshot({
       name: "/bottom-placement-end",
       testThreshold: setThresholdBasedOnEnv(DEFAULT_TEST_THRESHOLD + 0.01),
-      delay: 200,
     });
   });
 
@@ -418,7 +410,6 @@ describe("IcTooltip visual regression and a11y tests", () => {
     cy.compareSnapshot({
       name: "/right-placement-start",
       testThreshold: setThresholdBasedOnEnv(DEFAULT_TEST_THRESHOLD + 0.004),
-      delay: 200,
     });
   });
 
@@ -432,7 +423,6 @@ describe("IcTooltip visual regression and a11y tests", () => {
     cy.compareSnapshot({
       name: "/right-placement",
       testThreshold: setThresholdBasedOnEnv(DEFAULT_TEST_THRESHOLD + 0.008),
-      delay: 200,
     });
   });
 
@@ -446,7 +436,6 @@ describe("IcTooltip visual regression and a11y tests", () => {
     cy.compareSnapshot({
       name: "/right-placement-end",
       testThreshold: setThresholdBasedOnEnv(DEFAULT_TEST_THRESHOLD + 0.01),
-      delay: 200,
     });
   });
 
@@ -460,7 +449,6 @@ describe("IcTooltip visual regression and a11y tests", () => {
     cy.compareSnapshot({
       name: "/left-placement-start",
       testThreshold: setThresholdBasedOnEnv(DEFAULT_TEST_THRESHOLD + 0.012),
-      delay: 200,
     });
   });
 
@@ -474,7 +462,6 @@ describe("IcTooltip visual regression and a11y tests", () => {
     cy.compareSnapshot({
       name: "/left-placement",
       testThreshold: setThresholdBasedOnEnv(DEFAULT_TEST_THRESHOLD + 0.007),
-      delay: 200,
     });
   });
 
@@ -488,7 +475,6 @@ describe("IcTooltip visual regression and a11y tests", () => {
     cy.compareSnapshot({
       name: "/left-placement-end",
       testThreshold: setThresholdBasedOnEnv(DEFAULT_TEST_THRESHOLD + 0.006),
-      delay: 200,
     });
   });
 
@@ -511,7 +497,6 @@ describe("IcTooltip visual regression and a11y tests", () => {
     cy.compareSnapshot({
       name: "/dark-background",
       testThreshold: setThresholdBasedOnEnv(DEFAULT_TEST_THRESHOLD + 0.004),
-      delay: 200,
     });
   });
 
@@ -525,7 +510,6 @@ describe("IcTooltip visual regression and a11y tests", () => {
     cy.compareSnapshot({
       name: "/truncated-text",
       testThreshold: setThresholdBasedOnEnv(DEFAULT_TEST_THRESHOLD + 0.049),
-      delay: 200,
     });
   });
 
@@ -539,7 +523,6 @@ describe("IcTooltip visual regression and a11y tests", () => {
     cy.compareSnapshot({
       name: "/on-chip",
       testThreshold: setThresholdBasedOnEnv(DEFAULT_TEST_THRESHOLD),
-      delay: 200,
     });
   });
 
@@ -552,7 +535,6 @@ describe("IcTooltip visual regression and a11y tests", () => {
     cy.compareSnapshot({
       name: "/changing-label",
       testThreshold: setThresholdBasedOnEnv(DEFAULT_TEST_THRESHOLD + 0.004),
-      delay: 200,
     });
   });
 
@@ -592,7 +574,6 @@ describe("IcTooltip visual regression and a11y tests", () => {
     cy.compareSnapshot({
       name: "/with-icon",
       testThreshold: setThresholdBasedOnEnv(DEFAULT_TEST_THRESHOLD + 0.01),
-      delay: 200,
     });
   });
 });
@@ -619,7 +600,6 @@ describe("IcTooltip visual regression tests in high contrast mode", () => {
     cy.compareSnapshot({
       name: "/default-high-contrast",
       testThreshold: setThresholdBasedOnEnv(DEFAULT_TEST_THRESHOLD + 0.007),
-      delay: 200,
     });
   });
 
@@ -632,7 +612,6 @@ describe("IcTooltip visual regression tests in high contrast mode", () => {
     cy.compareSnapshot({
       name: "/left-placement-high-contrast",
       testThreshold: setThresholdBasedOnEnv(DEFAULT_TEST_THRESHOLD + 0.011),
-      delay: 200,
     });
   });
 
@@ -645,7 +624,6 @@ describe("IcTooltip visual regression tests in high contrast mode", () => {
     cy.compareSnapshot({
       name: "/with-icon-high-contrast",
       testThreshold: setThresholdBasedOnEnv(DEFAULT_TEST_THRESHOLD + 0.01),
-      delay: 200,
     });
   });
 });

@@ -285,7 +285,6 @@ describe("IcToggleButtonGroup", () => {
       cy.compareSnapshot({
         name: "/loading",
         testThreshold: setThresholdBasedOnEnv(DEFAULT_TEST_THRESHOLD),
-        delay: 500,
       });
     });
 
@@ -300,7 +299,6 @@ describe("IcToggleButtonGroup", () => {
       cy.compareSnapshot({
         name: "/loading-light",
         testThreshold: setThresholdBasedOnEnv(DEFAULT_TEST_THRESHOLD),
-        delay: 500,
       });
     });
 
@@ -311,7 +309,6 @@ describe("IcToggleButtonGroup", () => {
       cy.compareSnapshot({
         name: "/loading-dark",
         testThreshold: setThresholdBasedOnEnv(DEFAULT_TEST_THRESHOLD),
-        delay: 500,
       });
     });
 
@@ -330,7 +327,6 @@ describe("IcToggleButtonGroup", () => {
       cy.compareSnapshot({
         name: "/icons",
         testThreshold: setThresholdBasedOnEnv(DEFAULT_TEST_THRESHOLD + 0.033),
-        delay: 1000,
       });
     });
 
@@ -387,7 +383,6 @@ describe("IcToggleButtonGroup visual regression in high contrast mode", () => {
     cy.compareSnapshot({
       name: "/focused-toggle-checked-toggle-group-high-contrast",
       testThreshold: setThresholdBasedOnEnv(DEFAULT_TEST_THRESHOLD + 0.019),
-      delay: 200,
     });
   });
 

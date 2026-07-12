@@ -11,7 +11,21 @@ import {
 import "cypress-file-upload";
 
 import compareSnapshotCommand from "cypress-image-diff-js";
+import { settleRender } from "./settle-render";
+
 compareSnapshotCommand();
+
+// Wait for rendering to settle (animations finished, fonts loaded) before
+// every visual regression screenshot, so snapshots are deterministic
+Cypress.Commands.overwrite(
+  "compareSnapshot",
+  (originalFn, ...args: unknown[]) => {
+    cy.document({ log: false }).then({ timeout: 10000 }, settleRender);
+    return (
+      originalFn as unknown as (...fnArgs: unknown[]) => Cypress.Chainable
+    )(...args);
+  }
+);
 
 // Create the typing for the getCall command
 declare global {
@@ -161,13 +175,14 @@ const checkA11yWithWait = (
 const mockResizeObserver = (width: number, height: number) => {
   cy.window().then((win) => {
     cy.stub(win, "ResizeObserver").callsFake((callback) => {
-      return {
-        observe: () => {
-          callback([{ contentRect: { width, height } }], this);
+      const observer = {
+        observe: (): void => {
+          callback([{ contentRect: { width, height } }], observer);
         },
-        unobserve: () => null,
-        disconnect: () => null,
+        unobserve: (): void => undefined,
+        disconnect: (): void => undefined,
       };
+      return observer;
     });
   });
 };

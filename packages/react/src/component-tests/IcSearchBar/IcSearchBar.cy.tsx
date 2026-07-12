@@ -1005,7 +1005,6 @@ describe("IcSearchBar visual regression and a11y tests", () => {
     cy.compareSnapshot({
       name: "/long-option-label",
       testThreshold: setThresholdBasedOnEnv(DEFAULT_TEST_THRESHOLD + 0.051),
-      delay: 500,
       cypressScreenshotOptions: {
         capture: "viewport",
       },

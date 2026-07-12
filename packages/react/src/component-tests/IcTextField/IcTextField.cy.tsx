@@ -1,5 +1,3 @@
-/// <reference types="Cypress" />
-
 import { mount } from "cypress/react";
 import React from "react";
 import {
@@ -535,7 +533,6 @@ describe("IcTextField visual regression tests", () => {
     cy.wait(250).compareSnapshot({
       name: "/dark-theme",
       testThreshold: setThresholdBasedOnEnv(DEFAULT_TEST_THRESHOLD + 0.083),
-      delay: 500,
     });
   });
 
