@@ -105,7 +105,16 @@ jobs:
           node-version: 24
 
       - name: Setup Chrome
+        id: setup-chrome
         uses: browser-actions/setup-chrome@97349de5c98094d4fc9412f31c524d7697115ad8 #v1.5.0
+        with:
+          # Pin the exact Chrome for Testing build so rendering matches the
+          # committed visual regression baselines. Keep in sync with
+          # update-cypress-visual-regression-tests.yml and regen-baselines.yml.
+          chrome-version: 150.0.7871.115
+
+      - name: Use pinned Chrome for all browser lookups
+        run: sudo ln -sf "${{ steps.setup-chrome.outputs.chrome-path }}" /usr/local/bin/google-chrome
 
       - name: Extract branch name
         run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT

@@ -3,6 +3,10 @@ permissions: read-all
 
 on: workflow_dispatch
 
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   regen-baselines:
     name: "Regenerate baselines with Chrome"
@@ -15,6 +19,16 @@ jobs:
         with:
           node-version: 24
       - uses: browser-actions/setup-chrome@97349de5c98094d4fc9412f31c524d7697115ad8 #v1.5.0
+        id: setup-chrome
+        with:
+          # Pin the exact Chrome for Testing build so rendering is identical
+          # between baseline generation and every comparison run. Bump this
+          # deliberately and regenerate all baselines in the same PR.
+          chrome-version: 150.0.7871.115
+
+      - name: Use pinned Chrome for all browser lookups
+        run: sudo ln -sf "${{ steps.setup-chrome.outputs.chrome-path }}" /usr/local/bin/google-chrome
+
       - name: Install dependencies
         run: |
           google-chrome --version
@@ -31,19 +45,39 @@ jobs:
 
       - name: Core Cypress tests
         id: core_cypress_tests
+        env:
+          UPDATE_BASELINES: "true"
         run: npm run test-cypress:headless
 
       - name: Canary Cypress tests
         id: canary_cypress_tests
+        if: always()
+        env:
+          UPDATE_BASELINES: "true"
         run: npm run test-cypress:canary:headless
+
+      - name: Report regenerated baseline counts
+        if: always()
+        run: |
+          echo "react baselines: $(find packages/react/cypress-image-diff-screenshots/baseline -name '*.png' | wc -l)"
+          echo "canary-react baselines: $(find packages/canary-react/cypress-image-diff-screenshots/baseline -name '*.png' | wc -l)"
 
       - name: Checkout docs.json
         if: always()
         run: git checkout ./packages/docs/docs.json ./packages/canary-docs/docs.json
 
       - uses: EndBug/add-and-commit@a94899bca583c204427a224a7af87c02f9b325d5 #v9.1.4
-        if: always()
+        if: ${{ always() && steps.core_cypress_tests.outcome == 'success' }}
         with:
+          add: "packages/react/cypress-image-diff-screenshots"
           commit: --no-verify
           default_author: github_actions
           message: "chore(react): regenerate Cypress visual regression baselines for Chrome"
+
+      - uses: EndBug/add-and-commit@a94899bca583c204427a224a7af87c02f9b325d5 #v9.1.4
+        if: ${{ always() && steps.canary_cypress_tests.outcome == 'success' }}
+        with:
+          add: "packages/canary-react/cypress-image-diff-screenshots"
+          commit: --no-verify
+          default_author: github_actions
+          message: "chore(canary-react): regenerate Cypress visual regression baselines for Chrome"
