@@ -10,8 +10,7 @@ import {
 
 import "cypress-file-upload";
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const compareSnapshotCommand = require("cypress-image-diff-js/command");
+import compareSnapshotCommand from "cypress-image-diff-js/command";
 compareSnapshotCommand();
 
 // Create the typing for the getCall command
@@ -100,9 +99,9 @@ const checkShadowElVisible = (
 
 const cdpCommand = "Emulation.setEmulatedMedia";
 const media = "forced-colors";
-  
+
 const enableForcedColors = () => {
-  const darkMode= "dark";
+  const darkMode = "dark";
   return cy
     .then(() => {
       return Cypress.automation("remote:debugger:protocol", {
@@ -111,7 +110,7 @@ const enableForcedColors = () => {
           media,
           features: [
             { name: media, value: "active" },
-            { name: "prefers-color-scheme", value: darkMode},
+            { name: "prefers-color-scheme", value: darkMode },
           ],
         },
       });
@@ -123,8 +122,8 @@ const enableForcedColors = () => {
       });
     })
     .window();
-}
-  
+};
+
 const disableForcedColors = () => {
   return cy
     .then(() => {
@@ -142,7 +141,7 @@ const disableForcedColors = () => {
       });
     })
     .window();
-}
+};
 
 const findShadowEl = (
   element: string,
@@ -163,21 +162,18 @@ const checkA11yWithWait = (
   cy.checkA11y(element, optionObject, CYPRESS_AXE_REPORTING);
 };
 
-const mockResizeObserver = (
-  width: number,
-  height: number
-) => {
-cy.window().then((win) => {
-  cy.stub(win, "ResizeObserver").callsFake((callback) => {
-    return {
-      observe: () => {
-        callback([{ contentRect: { width, height } }], this);
-      },
-      unobserve: () => null,
-      disconnect: () => null,
-    };
+const mockResizeObserver = (width: number, height: number) => {
+  cy.window().then((win) => {
+    cy.stub(win, "ResizeObserver").callsFake((callback) => {
+      return {
+        observe: () => {
+          callback([{ contentRect: { width, height } }], this);
+        },
+        unobserve: () => null,
+        disconnect: () => null,
+      };
+    });
   });
-});
 };
 
 const Commands = {
