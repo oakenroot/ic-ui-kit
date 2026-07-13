@@ -14,3 +14,14 @@ import "../../dist/core/core.css";
 before(() => {
   cy.disableForcedColors();
 });
+
+// "ResizeObserver loop completed with undelivered notifications" is a benign
+// browser warning (the skipped observations are re-delivered on the next
+// frame) but Chrome reports it as an error event, which Cypress treats as an
+// application crash. Never fail a test on it.
+Cypress.on("uncaught:exception", (err) => {
+  if (/ResizeObserver loop/.test(err.message)) {
+    return false;
+  }
+  return undefined;
+});
