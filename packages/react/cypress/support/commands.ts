@@ -10,9 +10,22 @@ import {
 
 import "cypress-file-upload";
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const compareSnapshotCommand = require("cypress-image-diff-js/command");
+import compareSnapshotCommand from "cypress-image-diff-js";
+import { settleRender } from "./settle-render";
+
 compareSnapshotCommand();
+
+// Wait for rendering to settle (animations finished, fonts loaded) before
+// every visual regression screenshot, so snapshots are deterministic
+Cypress.Commands.overwrite(
+  "compareSnapshot",
+  (originalFn, ...args: unknown[]) => {
+    cy.document({ log: false }).then({ timeout: 10000 }, settleRender);
+    return (
+      originalFn as unknown as (...fnArgs: unknown[]) => Cypress.Chainable
+    )(...args);
+  }
+);
 
 // Create the typing for the getCall command
 declare global {
@@ -21,15 +34,11 @@ declare global {
   }
 }
 
-// Create the typing for the compareSnapshot command
+// Create the typing for the custom commands (compareSnapshot is typed by
+// cypress-image-diff-js itself)
 declare global {
   namespace Cypress {
     interface Chainable {
-      /**
-       * Compare the mounted component against the named snapshot
-       * @param {string} snapName the name of the snapshot to capture and compare with
-       */
-      compareSnapshot: typeof compareSnapshotCommand;
       /**
        * Check that the provided element has the hydrated class applied
        * @param {string} element identifier of the element to check
@@ -100,9 +109,9 @@ const checkShadowElVisible = (
 
 const cdpCommand = "Emulation.setEmulatedMedia";
 const media = "forced-colors";
-  
+
 const enableForcedColors = () => {
-  const darkMode= "dark";
+  const darkMode = "dark";
   return cy
     .then(() => {
       return Cypress.automation("remote:debugger:protocol", {
@@ -111,7 +120,7 @@ const enableForcedColors = () => {
           media,
           features: [
             { name: media, value: "active" },
-            { name: "prefers-color-scheme", value: darkMode},
+            { name: "prefers-color-scheme", value: darkMode },
           ],
         },
       });
@@ -123,8 +132,8 @@ const enableForcedColors = () => {
       });
     })
     .window();
-}
-  
+};
+
 const disableForcedColors = () => {
   return cy
     .then(() => {
@@ -142,7 +151,7 @@ const disableForcedColors = () => {
       });
     })
     .window();
-}
+};
 
 const findShadowEl = (
   element: string,
@@ -163,21 +172,19 @@ const checkA11yWithWait = (
   cy.checkA11y(element, optionObject, CYPRESS_AXE_REPORTING);
 };
 
-const mockResizeObserver = (
-  width: number,
-  height: number
-) => {
-cy.window().then((win) => {
-  cy.stub(win, "ResizeObserver").callsFake((callback) => {
-    return {
-      observe: () => {
-        callback([{ contentRect: { width, height } }], this);
-      },
-      unobserve: () => null,
-      disconnect: () => null,
-    };
+const mockResizeObserver = (width: number, height: number) => {
+  cy.window().then((win) => {
+    cy.stub(win, "ResizeObserver").callsFake((callback) => {
+      const observer = {
+        observe: (): void => {
+          callback([{ contentRect: { width, height } }], observer);
+        },
+        unobserve: (): void => undefined,
+        disconnect: (): void => undefined,
+      };
+      return observer;
+    });
   });
-});
 };
 
 const Commands = {

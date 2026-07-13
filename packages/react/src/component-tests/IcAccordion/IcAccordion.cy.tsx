@@ -1,5 +1,4 @@
 /* eslint-disable react/jsx-no-bind */
-/// <reference types="Cypress" />
 
 import { mount } from "cypress/react";
 import React from "react";

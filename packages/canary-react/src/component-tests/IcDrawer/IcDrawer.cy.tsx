@@ -1,5 +1,3 @@
-/// <reference types="Cypress" />
-
 import React, { ReactElement, useState } from "react";
 import { mount } from "cypress/react";
 import { IcDrawer } from "../../components";

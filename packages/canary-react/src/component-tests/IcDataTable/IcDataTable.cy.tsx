@@ -323,7 +323,7 @@ describe("IcDataTables", () => {
     cy.compareSnapshot({
       name: "/section-container",
       testThreshold: setThresholdBasedOnEnv(DEFAULT_THRESHOLD + 0.114),
-      cypressSCreenshotOptions: {
+      cypressScreenshotOptions: {
         capture: "viewport",
       },
     });
@@ -1162,7 +1162,6 @@ describe("IcDataTables", () => {
     cy.compareSnapshot({
       name: "/sticky-header",
       testThreshold: setThresholdBasedOnEnv(DEFAULT_THRESHOLD + 0.113),
-      delay: 500,
       cypressScreenshotOptions: {
         capture: "viewport",
       },
@@ -1184,7 +1183,6 @@ describe("IcDataTables", () => {
       cypressScreenshotOptions: {
         capture: "viewport",
       },
-      delay: 500,
     });
 
     cy.findShadowEl(DATA_TABLE_SELECTOR, "tr").eq(0).scrollIntoView();
@@ -1214,7 +1212,6 @@ describe("IcDataTables", () => {
       cypressScreenshotOptions: {
         capture: "viewport",
       },
-      delay: 500,
     });
 
     cy.get(TITLE_BAR_SELECTOR).shadow().find("ic-select").click();
@@ -1285,7 +1282,6 @@ describe("IcDataTables", () => {
       cypressScreenshotOptions: {
         capture: "viewport",
       },
-      delay: 500,
     });
   });
 
@@ -4797,7 +4793,6 @@ describe("IcDataTable row deletion", () => {
       cypressScreenshotOptions: {
         capture: "viewport",
       },
-      delay: 1000,
     });
   });
 
@@ -4838,7 +4833,6 @@ describe("IcDataTable row deletion", () => {
       cypressScreenshotOptions: {
         capture: "viewport",
       },
-      delay: 500,
     });
   });
 });
@@ -5042,7 +5036,6 @@ describe("IcDataTable visual regression tests in high contrast mode", () => {
       cypressScreenshotOptions: {
         capture: "viewport",
       },
-      delay: 500,
     });
   });
 
@@ -5307,7 +5300,6 @@ describe("IcDataTable visual regression tests in high contrast mode", () => {
       cypressScreenshotOptions: {
         capture: "viewport",
       },
-      delay: 500,
     });
   });
 });

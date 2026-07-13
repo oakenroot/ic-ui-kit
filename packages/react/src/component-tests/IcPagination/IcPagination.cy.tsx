@@ -1,5 +1,3 @@
-/// <reference types="Cypress" />
-
 import React from "react";
 import { IcPagination } from "../../components";
 import { mount } from "cypress/react";

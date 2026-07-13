@@ -1,5 +1,4 @@
 /* eslint-disable react/jsx-no-bind */
-/// <reference types="Cypress" />
 
 import React from "react";
 import { mount } from "cypress/react";
@@ -575,7 +574,6 @@ describe("IcTab visual regression tests", () => {
     cy.compareSnapshot({
       name: "/focused",
       testThreshold: setThresholdBasedOnEnv(DEFAULT_TEST_THRESHOLD + 0.008),
-      delay: 500,
     });
   });
 
@@ -594,7 +592,6 @@ describe("IcTab visual regression tests", () => {
     cy.compareSnapshot({
       name: "/focused-light",
       testThreshold: setThresholdBasedOnEnv(DEFAULT_TEST_THRESHOLD + 0.014),
-      delay: 500,
     });
   });
 

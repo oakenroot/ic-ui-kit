@@ -36,6 +36,16 @@ jobs:
         with:
           node-version: 24
       - uses: browser-actions/setup-chrome@97349de5c98094d4fc9412f31c524d7697115ad8 #v1.5.0
+        id: setup-chrome
+        with:
+          # Pin the exact Chrome for Testing build so rendering is identical
+          # between baseline generation and every comparison run. Keep in
+          # sync with ic-ui-kit-branches.yml and regen-baselines.yml.
+          chrome-version: 150.0.7871.115
+
+      - name: Use pinned Chrome for all browser lookups
+        run: sudo ln -sf "${{ steps.setup-chrome.outputs.chrome-path }}" /usr/local/bin/google-chrome
+
       - name: Install dependencies
         run: |
           google-chrome --version
@@ -59,12 +69,16 @@ jobs:
       - name: Core Cypress tests
         if: ${{ needs.check-updates.outputs.core == 'true' }}
         id: core_cypress_tests
+        env:
+          UPDATE_BASELINES: "true"
         run: |
           npm run test-cypress:headless
 
       - name: Canary Cypress tests
         if: ${{ needs.check-updates.outputs.canary == 'true' }}
         id: canary_cypress_tests
+        env:
+          UPDATE_BASELINES: "true"
         run: |
           npm run test-cypress:canary:headless
 

@@ -35,7 +35,9 @@ export const TimePeriodTimeSelector = () => {
 };
 
 export const HHMMTimeSelector = () => {
-  return <IcTimeSelector timeFormat="HH:MM" />;
+  // ic-time-selector has no timeFormat prop - HH:MM (hours and minutes
+  // columns without seconds) is its default presentation
+  return <IcTimeSelector />;
 };
 
 export const MinTimeSelector = () => {
@@ -47,11 +49,9 @@ export const MaxTimeSelector = () => {
 };
 
 export const DisableTimesTimeSelector = () => {
-  return (
-    <IcTimeSelector
-      disableTimes={[{ start: "08:00", end: "10:00" }, "13:20"]}
-    />
-  );
+  // Bare time strings are not part of IcDisableTimeSelection and are
+  // ignored at runtime, so only start/end ranges are passed
+  return <IcTimeSelector disableTimes={[{ start: "08:00", end: "10:00" }]} />;
 };
 
 export const ClearingValueTimeSelector = () => {

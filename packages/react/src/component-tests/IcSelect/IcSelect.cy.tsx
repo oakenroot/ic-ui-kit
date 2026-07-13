@@ -1,5 +1,3 @@
-/// <reference types="Cypress" />
-
 import { mount } from "@cypress/react";
 import React from "react";
 import { IcSelect, IcTypography } from "../../components";
@@ -344,7 +342,6 @@ describe("IcSelect end-to-end, visual regression and a11y tests", () => {
     cy.compareSnapshot({
       name: "/large",
       testThreshold: setThresholdBasedOnEnv(DEFAULT_TEST_THRESHOLD + 0.07),
-      delay: 1000,
     });
   });
 
@@ -366,7 +363,6 @@ describe("IcSelect end-to-end, visual regression and a11y tests", () => {
     cy.compareSnapshot({
       name: "/large-open",
       testThreshold: setThresholdBasedOnEnv(DEFAULT_TEST_THRESHOLD + 0.07),
-      delay: 1000,
     });
   });
 

@@ -125,7 +125,7 @@ export const DataTableWithPopover = (): JSX.Element => {
       }}
     >
       {DATA_REACT_ELEMENTS_PAGINATION.map((_, index) => {
-        const popoverRef = useRef<{ open: boolean }>(null);
+        const popoverRef = useRef<HTMLIcPopoverMenuElement>(null);
 
         return (
           <div key={`actions-${index}`} slot={`actions-${index}`}>

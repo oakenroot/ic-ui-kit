@@ -2,21 +2,9 @@ import React, { useState } from "react";
 import { IcTimeInput } from "../../components";
 import { IcTypography, IcLink, IcButton } from "@ukic/react";
 
-export const DefaultTimeInput = (timeInputProps?: {
-  disabled?: boolean;
-  size?: string;
-  value?: string | Date;
-  hideLabel?: boolean;
-  hideHelperText?: boolean;
-  required?: boolean;
-  timeFormat?: string;
-  timePeriod?: string;
-  showAmPmToggle?: boolean;
-  disableTimes?: any[];
-  min?: string;
-  max?: string;
-  theme?: string;
-}) => {
+export const DefaultTimeInput = (
+  timeInputProps?: Partial<React.ComponentProps<typeof IcTimeInput>>
+) => {
   return (
     <IcTimeInput
       label="What time would you like to collect your coffee?"
@@ -68,15 +56,21 @@ export const ValidationStatusTimeInput = () => {
     </>
   );
 };
-
 export const DisableTimesTimeInput = () => {
+  // ic-time-input also validates bare time strings as single disabled times
+  // at runtime, but the IcDisableTimeSelection prop typing does not include
+  // them, hence the cast
   return (
     <DefaultTimeInput
-      disableTimes={[{ start: "08:00:00", end: "10:00:00" }, "13:20:00"]}
+      disableTimes={
+        [
+          { start: "08:00:00", end: "10:00:00" },
+          "13:20:00",
+        ] as React.ComponentProps<typeof IcTimeInput>["disableTimes"]
+      }
     />
   );
 };
-
 export const ClearingValueTimeInput = () => {
   const [value, setValue] = useState<string>("08:30:00");
   const handleUpdate = () => {

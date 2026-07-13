@@ -1,5 +1,3 @@
-/// <reference types="Cypress" />
-
 import { mount } from "cypress/react";
 import React from "react";
 import { IcCardVertical } from "../../components";

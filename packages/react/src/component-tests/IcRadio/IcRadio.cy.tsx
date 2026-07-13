@@ -762,7 +762,6 @@ describe("IcRadio visual regression tests in high contrast mode", () => {
     cy.compareSnapshot({
       name: "/conditional-dynamic-high-contrast",
       testThreshold: setThresholdBasedOnEnv(DEFAULT_TEST_THRESHOLD + 0.084),
-      delay: 1000,
     });
   });
 });
