@@ -56,15 +56,21 @@ export const ValidationStatusTimeInput = () => {
     </>
   );
 };
-
 export const DisableTimesTimeInput = () => {
-  // Bare time strings are not part of IcDisableTimeSelection and are
-  // ignored at runtime, so only start/end ranges are passed
+  // ic-time-input also validates bare time strings as single disabled times
+  // at runtime, but the IcDisableTimeSelection prop typing does not include
+  // them, hence the cast
   return (
-    <DefaultTimeInput disableTimes={[{ start: "08:00:00", end: "10:00:00" }]} />
+    <DefaultTimeInput
+      disableTimes={
+        [
+          { start: "08:00:00", end: "10:00:00" },
+          "13:20:00",
+        ] as React.ComponentProps<typeof IcTimeInput>["disableTimes"]
+      }
+    />
   );
 };
-
 export const ClearingValueTimeInput = () => {
   const [value, setValue] = useState<string>("08:30:00");
   const handleUpdate = () => {

@@ -2688,10 +2688,13 @@ describe("IcDatePicker end-to-end, visual regression and a11y tests", () => {
         .find(CALENDAR_BUTTON_ID)
         .click();
 
+      // realClick so focus behaviour matches a real browser click - with
+      // simulated events in Chrome the focus returned to the calendar button
+      // is immediately blurred again
       cy.findShadowEl(DATE_PICKER, CALENDAR)
         .shadow()
         .find(FOCUSSED_DAY_BTN_CLASS)
-        .click();
+        .realClick();
 
       cy.findShadowEl(DATE_PICKER, CALENDAR).should(NOT_EXIST);
 
@@ -2792,22 +2795,28 @@ describe("IcDatePicker end-to-end, visual regression and a11y tests", () => {
         .shadow()
         .find(CALENDAR_BUTTON_ID)
         .click();
+      // realClick so focus behaviour matches a real browser click - with
+      // simulated events in Chrome the inputs cannot be focused for typing
+      // afterwards
       cy.findShadowEl(DATE_PICKER, CALENDAR)
         .shadow()
         .find(FOCUSSED_DAY_BTN_CLASS)
-        .click();
+        .realClick();
 
       cy.findShadowEl(DATE_PICKER, DATE_INPUT)
         .shadow()
         .find(DAY_INPUT_ARIA_LABEL)
+        .focus()
         .type("18");
       cy.findShadowEl(DATE_PICKER, DATE_INPUT)
         .shadow()
         .find(MONTH_INPUT_ARIA_LABEL)
+        .focus()
         .type("14");
       cy.findShadowEl(DATE_PICKER, DATE_INPUT)
         .shadow()
         .find(YEAR_INPUT_ARIA_LABEL)
+        .focus()
         .type("2000");
 
       cy.wait(200);
