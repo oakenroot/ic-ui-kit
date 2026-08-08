@@ -2,8 +2,8 @@
   {
     "url": "http://localhost:3001/#/searchbar-variants?theme=light",
     "isRepresentativeRun": true,
-    "htmlPath": "/home/runner/work/ic-ui-kit/ic-ui-kit/packages/react/lhci-reports/searchbar-variants-light/localhost--2026_08_07_04_38_31.report.html",
-    "jsonPath": "/home/runner/work/ic-ui-kit/ic-ui-kit/packages/react/lhci-reports/searchbar-variants-light/localhost--2026_08_07_04_38_31.report.json",
+    "htmlPath": "/home/runner/work/ic-ui-kit/ic-ui-kit/packages/react/lhci-reports/searchbar-variants-light/localhost--2026_08_08_03_46_49.report.html",
+    "jsonPath": "/home/runner/work/ic-ui-kit/ic-ui-kit/packages/react/lhci-reports/searchbar-variants-light/localhost--2026_08_08_03_46_49.report.json",
     "summary": {
       "performance": 1,
       "accessibility": 1,
