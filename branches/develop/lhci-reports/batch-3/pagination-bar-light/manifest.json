@@ -2,8 +2,8 @@
   {
     "url": "http://localhost:3001/#/pagination-bar?theme=light",
     "isRepresentativeRun": true,
-    "htmlPath": "/home/runner/work/ic-ui-kit/ic-ui-kit/packages/react/lhci-reports/pagination-bar-light/localhost--2026_08_13_04_23_58.report.html",
-    "jsonPath": "/home/runner/work/ic-ui-kit/ic-ui-kit/packages/react/lhci-reports/pagination-bar-light/localhost--2026_08_13_04_23_58.report.json",
+    "htmlPath": "/home/runner/work/ic-ui-kit/ic-ui-kit/packages/react/lhci-reports/pagination-bar-light/localhost--2026_08_14_04_20_41.report.html",
+    "jsonPath": "/home/runner/work/ic-ui-kit/ic-ui-kit/packages/react/lhci-reports/pagination-bar-light/localhost--2026_08_14_04_20_41.report.json",
     "summary": {
       "performance": 1,
       "accessibility": 1,
