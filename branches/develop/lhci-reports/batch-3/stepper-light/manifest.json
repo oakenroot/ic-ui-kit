@@ -2,8 +2,8 @@
   {
     "url": "http://localhost:3001/#/stepper?theme=light",
     "isRepresentativeRun": true,
-    "htmlPath": "/home/runner/work/ic-ui-kit/ic-ui-kit/packages/react/lhci-reports/stepper-light/localhost--2026_09_11_07_15_54.report.html",
-    "jsonPath": "/home/runner/work/ic-ui-kit/ic-ui-kit/packages/react/lhci-reports/stepper-light/localhost--2026_09_11_07_15_54.report.json",
+    "htmlPath": "/home/runner/work/ic-ui-kit/ic-ui-kit/packages/react/lhci-reports/stepper-light/localhost--2026_09_12_07_07_49.report.html",
+    "jsonPath": "/home/runner/work/ic-ui-kit/ic-ui-kit/packages/react/lhci-reports/stepper-light/localhost--2026_09_12_07_07_49.report.json",
     "summary": {
       "performance": 1,
       "accessibility": 1,
